@@ -40,6 +40,16 @@ namespace CodeChallenge.Services
             return null;
         }
 
+        public async Task<ReportingStructure> GetReportingStructure(string id)
+        {
+            if (String.IsNullOrEmpty(id))
+            {
+                return null;
+            }
+
+            return await _employeeRepository.GetReportingStructureById(id);
+        }
+
         public Employee Replace(Employee originalEmployee, Employee newEmployee)
         {
             if(originalEmployee != null)
